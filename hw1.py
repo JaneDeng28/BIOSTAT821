@@ -1,23 +1,23 @@
 def get_data(path):
-    result = []
-    with open(path, 'r') as f:
-        for line in f:
-            result.append(list(map(float, line.split(' '))))
-    return result
+    mydata = []
+    with open(path, 'r') as file:
+        for line in file:
+            mydata.append(list(map(float, line.split(' '))))
+    return mydata
 
 
-def analyze_data(list, method):
-    number = []
+def analyze_data(list, Method):
+    numlist = []
     for i in list:
         for j in i:
-            number.append(j)
+            numlist.append(j)
 
     if method == "average":
-        print(sum(number)/ len(number))
+        print(sum(numlist)/ len(numlist))
 
     if method == "standard deviation":
-        mean = sum(number) / len(number)
-        print((sum([(x - mean)**2 for x in number])/len(number))**0.5)
+        mean = sum(numlist) / len(numlist)
+        print((sum([(x - mean)**2 for x in numlist])/len(numlist))**0.5)
 
     if method == "covariance":
         mean_0 = sum(list[0]) / len(list[0])
