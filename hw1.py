@@ -1,4 +1,4 @@
-def get_data(path):
+def get_data(path:str) -> list:
     mydata = []
     with open(path, 'r') as file:
         for line in file:
@@ -6,20 +6,20 @@ def get_data(path):
     return mydata
 
 
-def analyze_data(list, Method):
+def analyze_data(list:list, Method:str) -> float:
     numlist = []
     for i in list:
         for j in i:
             numlist.append(j)
 
-    if method == "average":
+    if Method == "average":
         print(sum(numlist)/ len(numlist))
 
-    if method == "standard deviation":
+    if Method == "standard deviation":
         mean = sum(numlist) / len(numlist)
         print((sum([(x - mean)**2 for x in numlist])/len(numlist))**0.5)
 
-    if method == "covariance":
+    if Method == "covariance":
         mean_0 = sum(list[0]) / len(list[0])
         mean_1 = sum(list[1]) / len(list[1])
         sub_0 = [i - mean_0 for i in list[0]]
@@ -28,7 +28,7 @@ def analyze_data(list, Method):
         denominator = len(list[0])
         print(numerator / denominator)
 
-    if method == "correlation":
+    if Method == "correlation":
         mean_0 = sum(list[0]) / len(list[0])
         mean_1 = sum(list[1]) / len(list[1])
         sub_0 = [i - mean_0 for i in list[0]]
