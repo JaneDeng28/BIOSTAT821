@@ -1,4 +1,4 @@
-def get_data(path:str) -> list:
+def get_data(path: str) -> list:
     mydata = []
     with open(path, 'r') as file:
         for line in file:
@@ -6,7 +6,7 @@ def get_data(path:str) -> list:
     return mydata
 
 
-def analyze_data(list:list, Method:str) -> float:
+def analyze_data(list: list, Method: str) -> float:
     numlist = []
     for i in list:
         for j in i:
